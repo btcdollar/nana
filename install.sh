@@ -21,34 +21,34 @@ echo -e "${LC}#              v1.0 | by Ch3ckr             ${LC}#${NC}"
 echo -e "${LC}#############################################${NC}"
 
 echo -e "\n"
-yes | pkg update > /dev/null 2>&1
-yes | pkg upgrade > /dev/null 2>&1
+yes | pkg update
+yes | pkg upgrade
 echo -e "${R}-> ${NC}Software Update: ${LG}COMPLETE${NC}"
-yes | pkg install cronie termux-services libjansson wget nano screen nmap openssh > /dev/null 2>&1
+yes | pkg install cronie termux-services libjansson wget nano screen nmap openssh
 echo -e "${R}->${NC} Additional Software: ${LG}COMPLETE${NC}"
-yes ${ssh_passwd} | passwd u0_a118 > /dev/null 2>&1
+yes ${ssh_passwd} | passwd u0_a118
 echo -e "${R}-> ${NC}Password change: ${LG}COMPLETE${NC}"
-sshd 2>&1 > /dev/null 2>&1
+sshd 2>&1
 echo -e "${R}-> ${NC}Starting SSHD: ${LG}COMPLETE${NC}"
-mkdir ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer > /dev/null 2>&1
+mkdir ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer
 echo -e "${R}-> ${NC}Creating Miner & Boot Folders: ${LG}COMPLETE${NC}"
-wget https://raw.githubusercontent.com/Darktron/pre-compiled/a53/ccminer > /dev/null 2>&1
-wget https://raw.githubusercontent.com/btcdollar/nana/main/start.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/btcdollar/nana/main/${config}  > /dev/null 2>&1
-mv ${config} config.json > /dev/null 2>&1
-chmod +x ccminer start.sh > /dev/null 2>&1
-cd ~/.termux/boot > /dev/null 2>&1
-wget https://raw.githubusercontent.com/btcdollar/nana/main/boot_start > /dev/null 2>&1
-chmod -R 777 ~/.termux/boot > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Darktron/pre-compiled/a53/ccminer
+wget https://raw.githubusercontent.com/btcdollar/nana/main/start.sh
+wget https://raw.githubusercontent.com/btcdollar/nana/main/${config} 
+mv ${config} config.json
+chmod +x ccminer start.sh
+cd ~/.termux/boot
+wget https://raw.githubusercontent.com/btcdollar/nana/main/boot_start
+chmod -R 777 ~/.termux/boot
 echo -e "${R}-> ${NC}Downloading config: ${LG}COMPLETE${NC}"
-cd ~ > /dev/null 2>&1
-rm ncc.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/btcdollar/nana/main/ncc.sh > /dev/null 2>&1
-chmod 777 ncc.sh > /dev/null 2>&1
-mkdir ~/.cache > /dev/null 2>&1
-(crontab -l 2>/dev/null; echo "*/5 * * * * ~/ncc.sh") | crontab - > /dev/null 2>&1
+cd ~
+rm ncc.sh
+wget https://raw.githubusercontent.com/btcdollar/nana/main/ncc.sh
+chmod 777 ncc.sh
+mkdir ~/.cache
+(crontab -l 2>/dev/null; echo "*/5 * * * * ~/ncc.sh") | crontab -
 echo -e "${R}-> ${NC}Installing NetworkCheck: ${LG}COMPLETE${NC}"
-~/ccminer/start.sh > /dev/null 2>&1
+~/ccminer/start.sh
 echo -e "${R}-> ${NC}Starting Miner: ${LG}COMPLETE${NC}"
 echo -e "\n"
 echo -e "${R}-> ${LB}VERUS ${NC}SETUP: ${LG}COMPLETE ${R}-> REBOOT${NC}"
