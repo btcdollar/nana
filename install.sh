@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/sh
 config='config.json'
 ssh_passwd='Passw0rd!'
 NC='\033[0m'
