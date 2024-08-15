@@ -1,34 +1,56 @@
-#!/bin/sh
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev git screen nano jq wget
-wget http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_arm64.deb
-sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_arm64.deb
-rm libssl1.1_1.1.0g-2ubuntu4_arm64.deb
-mkdir ccminer
-cd ccminer
-GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer-ARM-optimized/releases?per_page=1" | jq -c '[.[] | del (.body)]')
-GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets | .[] | .browser_download_url")
-GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets | .[] | .name")
+#!/bin/bash
 
-echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
+config='config.json'
+ssh_passwd='Passw0rd!'
 
-wget ${GITHUB_DOWNLOAD_URL} -O /ccminer/ccminer
-wget https://raw.githubusercontent.com/lukewrightmain/VerusCliMining/main/config.json -O ~/ccminer/config.json
-chmod +x /ccminer/ccminer
+NC='\033[0m'
+R='\033[0;31m'   #'0;31' is Red's ANSI color code
+G='\033[0;32m'   #'0;32' is Green's ANSI color code
+Y='\033[1;33m'   #'1;32' is Yellow's ANSI color code
+B='\033[0;34m'   #'0;34' is Blue's ANSI color code
+P='\033[0;35m'
+LG='\033[1;32m'
+LB='\033[1;34m'
+LP='\033[1;35m'
+LC='\033[1;36m'
 
-cat << EOF > ~/ccminer/start.sh
-#!/bin/sh
-~/ccminer/ccminer -c ~/ccminer/config.json
-EOF
-chmod +x start.sh
+echo -e "${LC}#############################################${NC}"
+echo -e "${LC}#             ${LB}VERUS ${LP}Miner ${G}SETUP             ${LC}#${NC}"
+echo -e "${LC}#                                           ${LC}#${NC}"
+echo -e "${LC}#              v1.0 | by Ch3ckr             ${LC}#${NC}"
+echo -e "${LC}#############################################${NC}"
 
-echo "setup nearly complete."
-echo "Edit the config with \"nano ~/ccminer/config.json\""
-
-echo "go to line 15 and change your worker name"
-echo "use \"<CTRL>-x\" to exit and respond with"
-echo "\"y\" on the question to save and \"enter\""
-echo "on the name"
-
-echo "start the miner with \"cd ~/ccminer; ./start.sh\"."
+echo -e "\n"
+yes | pkg update > /dev/null 2>&1
+yes | pkg upgrade > /dev/null 2>&1
+echo -e "${R}-> ${NC}Software Update: ${LG}COMPLETE${NC}"
+yes | pkg install cronie termux-services libjansson wget nano screen nmap openssh > /dev/null 2>&1
+echo -e "${R}->${NC} Additional Software: ${LG}COMPLETE${NC}"
+yes ${ssh_passwd} | passwd u0_a118 > /dev/null 2>&1
+echo -e "${R}-> ${NC}Password change: ${LG}COMPLETE${NC}"
+sshd 2>&1 > /dev/null 2>&1
+echo -e "${R}-> ${NC}Starting SSHD: ${LG}COMPLETE${NC}"
+mkdir ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer > /dev/null 2>&1
+echo -e "${R}-> ${NC}Creating Miner & Boot Folders: ${LG}COMPLETE${NC}"
+wget https://raw.githubusercontent.com/Darktron/pre-compiled/a53/ccminer > /dev/null 2>&1
+wget https://raw.githubusercontent.com/btcdollar/nana/main/start.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/btcdollar/nana/main/${config}  > /dev/null 2>&1
+mv ${config} config.json > /dev/null 2>&1
+chmod +x ccminer start.sh > /dev/null 2>&1
+cd ~/.termux/boot > /dev/null 2>&1
+wget https://raw.githubusercontent.com/btcdollar/nana/main/boot_start > /dev/null 2>&1
+chmod -R 777 ~/.termux/boot > /dev/null 2>&1
+echo -e "${R}-> ${NC}Downloading config: ${LG}COMPLETE${NC}"
+cd ~ > /dev/null 2>&1
+rm ncc.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/btcdollar/nana/main/ncc.sh > /dev/null 2>&1
+chmod 777 ncc.sh > /dev/null 2>&1
+mkdir ~/.cache > /dev/null 2>&1
+(crontab -l 2>/dev/null; echo "*/5 * * * * ~/ncc.sh") | crontab - > /dev/null 2>&1
+echo -e "${R}-> ${NC}Installing NetworkCheck: ${LG}COMPLETE${NC}"
+~/ccminer/start.sh > /dev/null 2>&1
+echo -e "${R}-> ${NC}Starting Miner: ${LG}COMPLETE${NC}"
+echo -e "\n"
+echo -e "${R}-> ${LB}VERUS ${NC}SETUP: ${LG}COMPLETE ${R}-> REBOOT${NC}"
+sleep 5
+su -c reboot
