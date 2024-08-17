@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 rm -rf ~/.termux && rm -rf ~/ccminer && rm -rf ~/.cache && rm ~/ncc.sh
 yes | pkg update
 yes | pkg upgrade
