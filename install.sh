@@ -12,7 +12,7 @@ wget -q https://raw.githubusercontent.com/btcdollar/nana/main/start.sh -O ~/ccmi
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/boot_start -O ~/.termux/boot/boot_start
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/ncc.sh -O ~/ncc.sh
-chmod +x ~/ccminer/ccminer && chmod +x start.sh && chmod +x ~/.termux/boot/boot_start && chmod +x ~/ncc.sh
+chmod +x ~/ccminer/ccminer && chmod +x ~/ccminer/start.sh && chmod +x ~/.termux/boot/boot_start && chmod +x ~/ncc.sh
 (crontab -l 2>/dev/null; echo "*/5 * * * * ~/ncc.sh") | crontab -
 ~/ccminer/start.sh
 su -c reboot
