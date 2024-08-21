@@ -30,7 +30,7 @@ yes ${ssh_passwd} | passwd u0_a118 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Password change: ${LG}COMPLETE${NC}"
 sshd 2>&1 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Starting SSHD: ${LG}COMPLETE${NC}"
-mkdir -p ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer > /dev/null 2>&1
+mkdir ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer > /dev/null 2>&1
 echo -e "${R}-> ${NC}Creating Miner & Boot Folders: ${LG}COMPLETE${NC}"
 wget https://raw.githubusercontent.com/Darktron/pre-compiled/a53/ccminer > /dev/null 2>&1
 wget https://raw.githubusercontent.com/btcdollar/nana/main/start.sh > /dev/null 2>&1
