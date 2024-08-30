@@ -32,7 +32,7 @@ sshd 2>&1 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Starting SSHD: ${LG}COMPLETE${NC}"
 mkdir -p ~/.termux/boot && mkdir ~/ccminer && cd ~/ccminer > /dev/null 2>&1
 echo -e "${R}-> ${NC}Creating Miner & Boot Folders: ${LG}COMPLETE${NC}"
-wget https://raw.githubusercontent.com/Darktron/pre-compiled/a53/ccminer > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Darktron/pre-compiled/generic/ccminer > /dev/null 2>&1
 wget https://raw.githubusercontent.com/btcdollar/nana/main/start.sh > /dev/null 2>&1
 wget https://raw.githubusercontent.com/btcdollar/nana/main/${config}  > /dev/null 2>&1
 mv ${config} config.json > /dev/null 2>&1
