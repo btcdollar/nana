@@ -9,8 +9,8 @@ if [ ! -d ~/.ssh ]
 then
   mkdir ~/.ssh
   chmod 0700 ~/.ssh
-  cat << EOF > ~/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEZ/ZOAPSHbSlIy0Sd0CvY71VO4AAzJwhy7ytMarU/2vow9cmKavUSw5PaJpsdC5+nrYunvaSnli34pOATZxTtXTb3dpk0RuJKTj6rl1NGkaiPr9GdaWSXVAzG339DeWgl+JPOv3ecIfTG8TEGxKb72lXVl3NlX0l98j3Q23X9SWIp4B6KFAv0FkTzNYYLKgbKihwQ7veW2qCmIpIytZftf9zHYGX0xjFQFAHX6nbY09wRQKjofQATGI8P0Qwh+LMxwDH/SKlKLrgAhd84z5i63nn8Alw8JChm45PyC2SiN1wncUukU7Logatp0WPV9lQrI9eZ+c7vFGuKQ0XlVJr5>
+  cat << EOF >> ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOAPjnQbztXVnQDGl1Xqty7kFyTZY4MEJgCn6Et6vRpivHV+dMHyLnsCp2iAxDnh99ld9P8adVpwWdOaaUm3wzxzRFK+83ZZGGuFO6/BRzC8J0D4CFur++rVdC8zHhyaGKTVU/I10dpYwVfnfyYjhBoFhb8lnMp3SIkd56HnHJDuAWg6Cr31wvevUbulOHh6uOaBdvyyAJxY8ASHyPOEDDIlo+4/oirMudO0L46zTvxktmAby0ZwD4jOcUK2K52L0+Xe7zWBRnDtY9bKTLoJFQ9McSVzoVTsXxlvGIJmW0WGTPfLf/o3w5T+JiE1vJL2/S+A7YSMgo952fofGl6r6R
 EOF
   chmod 0600 ~/.ssh/authorized_keys
 fi
