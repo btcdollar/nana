@@ -40,7 +40,7 @@ screen -S CCminer -X stuff "~/ccminer/ccminer -c ~/ccminer/config.json\n" 1>/dev
 printf '\nMining started.\n'
 printf '===============\n'
 printf '\nManual:\n'
-printf 'start: ~/.ccminer/start.sh\n'
+printf 'start: ~/ccminer/start.sh\n'
 printf 'stop: screen -X -S CCminer quit\n'
 printf '\nmonitor mining: screen -x CCminer\n'
 printf "exit monitor: 'CTRL-a' followed by 'd'\n\n"
