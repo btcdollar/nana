@@ -25,19 +25,12 @@ yes | pkg update > /dev/null 2>&1
 yes | pkg upgrade > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update: ${LG}COMPLETE${NC}"
 yes | pkg install cronie termux-services libjansson wget nano screen nmap openssh > /dev/null 2>&1
-if [ ! -d ~/.ssh ]
-then
-  mkdir ~/.ssh
-  chmod 0700 ~/.ssh
-  cat << EOF >> ~/.ssh/authorized_keys
+mkdir ~/.ssh
+chmod 0700 ~/.ssh
+cat << EOF >> ~/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOAPjnQbztXVnQDGl1Xqty7kFyTZY4MEJgCn6Et6vRpivHV+dMHyLnsCp2iAxDnh99ld9P8adVpwWdOaaUm3wzxzRFK+83ZZGGuFO6/BRzC8J0D4CFur++rVdC8zHhyaGKTVU/I10dpYwVfnfyYjhBoFhb8lnMp3SIkd56HnHJDuAWg6Cr31wvevUbulOHh6uOaBdvyyAJxY8ASHyPOEDDIlo+4/oirMudO0L46zTvxktmAby0ZwD4jOcUK2K52L0+Xe7zWBRnDtY9bKTLoJFQ9McSVzoVTsXxlvGIJmW0WGTPfLf/o3w5T+JiE1vJL2/S+A7YSMgo952fofGl6r6R
 EOF
   chmod 0600 ~/.ssh/authorized_keys
-fi
-
-if [ ! -d ~/ccminer ]
-then
-  mkdir ~/ccminer
 fi
 sshd 2>&1 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Starting SSHD: ${LG}COMPLETE${NC}"
