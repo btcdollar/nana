@@ -21,8 +21,8 @@ then
 fi
 cd ~/ccminer
 
-wget https://github.com/btcdollar/nana/blob/main/ccminer_s8 -O ~/ccminer/ccminer
-wget https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
+wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/user_ccminer_s8 -O ~/ccminer/ccminer
+wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 chmod +x ~/ccminer/ccminer
 
 cat << EOF > ~/ccminer/start.sh
