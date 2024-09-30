@@ -21,12 +21,6 @@ then
 fi
 cd ~/ccminer
 
-GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer-ARM-optimized/releases?per_page=1" | jq -c '[.[] | del (.body)]')
-GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets | .[] | .browser_download_url")
-GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets | .[] | .name")
-
-echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
-
 wget https://github.com/btcdollar/nana/blob/main/ccminer_s8 -O ~/ccminer/ccminer
 wget https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 chmod +x ~/ccminer/ccminer
