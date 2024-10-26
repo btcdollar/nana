@@ -19,10 +19,10 @@ if [ ! -d ~/ccminer ]
 then
   mkdir ~/ccminer
 fi
+wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/start.sh -O /etc/profile.d/ccminer.sh
+sudo chmod +x /etc/profile.d/ccminer.sh
 cd ~/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/user_ccminer_a53 -O ~/ccminer/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
-wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/start.sh -O /etc/profile.d/ccminer.sh
-sudo chmod +x /etc/profile.d/ccminer.sh
-sudo chmod +x ~/ccminer/ccminer
+chmod +x ~/ccminer/ccminer
 
