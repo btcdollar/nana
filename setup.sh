@@ -25,4 +25,5 @@ cd ~/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/user_ccminer_a53 -O ~/ccminer/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 chmod +x ~/ccminer/ccminer
-
+sleep 5
+su -c reboot
