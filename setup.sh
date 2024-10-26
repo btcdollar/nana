@@ -20,7 +20,6 @@ then
   mkdir ~/ccminer
 fi
 cd ~/ccminer
-
 wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/user_ccminer_a53 -O ~/ccminer/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/start.sh -O ~/etc/profile.d/ccminer.sh
