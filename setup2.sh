@@ -22,6 +22,4 @@ chmod +x build.sh configure.sh autogen.sh
 
 CXX=clang++ CC=clang ./build.sh
 
-wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
-
 ./ccminer -c config.json
