@@ -8,6 +8,8 @@ sudo apt-get install -y libllvm-16-ocaml-dev libllvm16 llvm-16 llvm-16-dev llvm-
 sudo ln -sf /usr/lib/llvm-16/bin/clang-16 /usr/bin/clang
 sudo ln -sf /usr/lib/llvm-16/bin/clang++ /usr/bin/clang++
 git clone https://github.com/btcdollar/ccminer.git
+sudo wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/start.sh -O /etc/profile.d/ccminer.sh
+sudo chmod +x /etc/profile.d/ccminer.sh
 cd ccminer && chmod +x build.sh configure.sh autogen.sh
 CXX=clang++ CC=clang ./build.sh
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
