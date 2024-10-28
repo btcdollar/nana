@@ -11,6 +11,6 @@ git clone https://github.com/btcdollar/ccminer.git
 sudo wget -q https://raw.githubusercontent.com/btcdollar/nana/refs/heads/main/start.sh -O /etc/profile.d/ccminer.sh
 sudo chmod +x /etc/profile.d/ccminer.sh
 cd ccminer && chmod +x build.sh configure.sh autogen.sh
-sed -i -e 's/a76/a75/g' configure.sh
+sed -i -e 's/a76/a77/g' configure.sh
 CXX=clang++ CC=clang ./build.sh
 ./ccminer -c config.json
