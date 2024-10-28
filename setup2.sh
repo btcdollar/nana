@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev ca-certificates openssh-sftp-server nano wget
+sudo apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev nano wget
 if [ ! -d ~/ccminer ]
 then
   mkdir ~/ccminer
