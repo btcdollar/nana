@@ -2,6 +2,8 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev nano wget
+sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_arm64.deb
+rm libssl1.1_1.1.0g-2ubuntu4_arm64.deb
 if [ ! -d ~/ccminer ]
 then
   mkdir ~/ccminer
