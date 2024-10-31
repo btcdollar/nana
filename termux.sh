@@ -7,4 +7,6 @@ wget -q https://raw.githubusercontent.com/btcdollar/nana/main/start.sh -O ~/ccmi
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/ccminer_a76 -O ~/ccminer/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/ccminer/config.json
 chmod +x ccminer start.sh
-./ccminer -c config.json
+cd && cd && cd
+sed -i -e '$acd ccminer/&&./start.sh' ../usr/etc/bash.bashrc
+~/ccminer/ccminer -c ~/ccminer/config.json
