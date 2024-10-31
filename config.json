@@ -1,14 +1,14 @@
 {
   "pools":[
     {
-    "name": "na.luckpool.net:3956",
-    "url": "stratum+tcp://na.luckpool.net:3956",
+    "name": "ap.luckpool.net:3956",
+    "url": "stratum+tcp://ap.luckpool.net:3956",
     "timeout": 180,
     "disabled": 0
     },
     {
-    "name": "ap.luckpool.net",
-    "url": "stratum+tcp://ap.luckpool.net:3956",
+    "name": "na.luckpool.net",
+    "url": "stratum+tcp://na.luckpool.net:3956",
     "timeout": 180,
     "disabled": 0
     },
@@ -19,7 +19,7 @@
     "disabled": 0
     }
   ],
-  "user": "RT6zHfozRHa9x8aWmBnzy6HYqMiDq9cPt2.01oX",
+  "user": "RT6zHfozRHa9x8aWmBnzy6HYqMiDq9cPt2.AP00z",
   "algo": "verus",
   "pass": "xxx",
   "threads": 8,
