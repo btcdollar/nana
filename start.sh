@@ -1,5 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/sh
-sleep 5
 termux-wake-lock
 sshd
 su -c dumpsys battery set level 100
