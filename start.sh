@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/sh
 termux-wake-lock
+sshd
 su -c dumpsys battery set level 100
 su -c svc power stayon true
 su -c dumpsys deviceidle whitelist +com.termux
