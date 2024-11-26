@@ -14,7 +14,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOAPjnQbztXVnQDGl1Xqty7kFyTZY4MEJgCn6Et6vR
 EOF
   chmod 0600 ~/.ssh/authorized_keys
 fi
-
 if [ ! -d ~/ccminer ]
 then
   mkdir ~/ccminer
