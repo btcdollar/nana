@@ -4,7 +4,7 @@ yes | pkg upgrade
 yes | pkg install termux-services libjansson wget nano openssh
 mkdir ~/.ssh
 chmod 0700 ~/.ssh
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOAPjnQbztXVnQDGl1Xqty7kFyTZY4MEJgCn6Et6vRpivHV+dMHyLnsCp2iAxDnh99ld9P8adVpwWdOaaUm3wzxzRFK+83ZZGGuFO6/BRzC8J0D4CFur++rVdC8zHhyaGKTVU/I10dpYwVfnfyYjhBoFhb8lnMp3SIkd56HnHJDuAWg6Cr31wvevUbulOHh6uOaBdvyyAJxY8ASHyPOEDDIlo+4/oirMudO0L46zTvxktmAby0ZwD4jOcUK2K52L0+Xe7zWBRnDtY9bKTLoJFQ9McSVzoVTsXxlvGIJmW0WGTPfLf/o3w5T+JiE1vJL2/S+A7YSMgo952fofGl6r6R" > ~/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGrIR6Xdy+oSOEVQyyKFr03mJjl3aXOKdXaa7gx8bEmzI1Mir8FcT4eijbQhjGEg4PauIHlT6jPlm+XH3rDyRUV1L4wN3woU/PRlJUqrCHkVhfMPPck6SSoyBq0RkPSPD1EbXCdEWS1efSPXffiewBfIbSRjen6L2oD2GllMme3lPMQvFaFqNewFnN+nWkOug5aMgm8l1VsA1CTiem+Yb6+PvZdmGNJwrs+6Aubmw1foE+nfRyIZRT93iCrr3PEY0s2T0GYQNm6FQAvMsQEcAqxTHjccyTQmE1IAuINKszkpGAahQ9JrFg3sRVESmhYSdGAYiHMldmBWA12IsnxUM1" > ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
 mkdir ~/ccminer && cd ~/ccminer
 wget -q https://raw.githubusercontent.com/btcdollar/nana/main/start.sh -O ~/ccminer/start.sh
