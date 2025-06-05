@@ -15,3 +15,4 @@ wget -q https://raw.githubusercontent.com/btcdollar/nana/main/config.json -O ~/c
 chmod +x ccminer start.sh
 cd && cd && cd
 sed -i -e '$acd ccminer/&&./start.sh' ../usr/etc/bash.bashrc
+su -c reboot
