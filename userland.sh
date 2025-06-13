@@ -1,5 +1,5 @@
 #!/system/bin/sh
-sleep 30
+sleep 40
 input keyevent KEYCODE_WAKEUP
 sleep 2
 input keyevent KEYCODE_SPACE
