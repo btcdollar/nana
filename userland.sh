@@ -27,6 +27,6 @@ su -c settings put secure allow_more_heat_value 80
 su -c settings put global enhanced_processing 2
 su -c settings put global wifi_sleep_policy 2
 su -c settings put global restricted_device_performance 0,0
-su -c "echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+su -c "echo performance > /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
 ​sleep 1
 exit 0
